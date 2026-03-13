@@ -429,23 +429,23 @@ const slides = [
     id: 0,
     title: "Does AI Know WorkfxAI?",
     description: "Will ChatGPT, Gemini & Claude mention you? Scan your AI visibility in one click.",
-    isCustom: true,
-    componentId: 'visibility'
+    componentId: 'visibility',
+    buttonText: 'STEP1: DIAGNOSE'
   },
   {
     id: 1,
-    title: "How AI recommends WorkfxAI?",
+    title: "How AI Recommends WorkfxAI?",
     description: "Auto-generate content & strategy that makes your brand an AI-recommended choice.",
-    isCustom: true,
-    componentId: 'calendar'
+    componentId: 'calendar',
+    buttonText: 'STEP2: EXECUTE'
   },
   {
     id: 2,
-    title: "How to Track Your AI Marketing Performance?",
+    title: "How to Track Your WorkfxAI Performance?",
     description: "Monitor traffic & AI visibility changes in real time. Smarter marketing starts here.",
     badge: "Coming Soon",
-    isCustom: true,
-    componentId: 'traffic'
+    componentId: 'traffic',
+    buttonText: 'STEP3: TRACKING'
   }
 ];
 
@@ -513,13 +513,7 @@ export default function App() {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
               >
-                {/* Close Button */}
-                <button 
-                  onClick={() => setIsOpen(false)}
-                  className="absolute top-4 right-4 z-20 p-2 bg-black/20 hover:bg-black/40 rounded-full text-white transition-colors backdrop-blur-md"
-                >
-                  <X className="w-4 h-4" />
-                </button>
+
 
                 {/* Top Graphic Area */}
                 <div className="relative h-[360px] w-full overflow-hidden bg-neutral-100">
@@ -537,20 +531,12 @@ export default function App() {
                       }}
                       className="absolute inset-0 w-full h-full"
                     >
-                      {slides[currentSlide].isCustom ? (
-                        slides[currentSlide].componentId === 'visibility' ? (
-                          <VisibilityScoreAnimation />
-                        ) : slides[currentSlide].componentId === 'calendar' ? (
-                          <ContentCalendarAnimation />
-                        ) : (
-                          <TrafficAnalyticsAnimation />
-                        )
+                      {slides[currentSlide].componentId === 'visibility' ? (
+                        <VisibilityScoreAnimation />
+                      ) : slides[currentSlide].componentId === 'calendar' ? (
+                        <ContentCalendarAnimation />
                       ) : (
-                        <img
-                          src={slides[currentSlide].image}
-                          alt={slides[currentSlide].title}
-                          className="w-full h-full object-cover"
-                        />
+                        <TrafficAnalyticsAnimation />
                       )}
                     </motion.div>
                   </AnimatePresence>
@@ -615,9 +601,9 @@ export default function App() {
 
                   {/* Bottom Button - Full width, centered, static text */}
                   <button 
-                    className="w-full py-3.5 bg-neutral-900 hover:bg-black text-white rounded-xl font-medium text-[16px] transition-all active:scale-[0.98] flex items-center justify-center gap-2 shadow-md group"
+                    className="w-full py-3.5 bg-neutral-900 hover:bg-black text-white rounded-xl font-medium text-[16px] transition-all active:scale-[0.98] flex items-center justify-center gap-2 shadow-md group uppercase"
                   >
-                    Scan Now
+                    {slides[currentSlide].buttonText}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
