@@ -1,6 +1,215 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, ArrowRight, Target, FileText, Link as LinkIcon, Globe, Search, XCircle, AlertTriangle, CheckCircle2, Linkedin, Youtube, Twitter, Instagram, MessageCircle, Video, BarChart2, Settings, HelpCircle, MessageSquare, Sparkles, Zap, Shield, Handshake, TrendingUp, Share2, DollarSign, ArrowUpRight } from 'lucide-react';
+import { X, ArrowRight, Target, FileText, Link as LinkIcon, Globe, Search, XCircle, AlertTriangle, CheckCircle2, Linkedin, Youtube, Twitter, Instagram, MessageCircle, Video, BarChart2, Settings, HelpCircle, MessageSquare, Sparkles, Zap, Shield, Handshake, TrendingUp, Share2,
+  DollarSign,
+  ArrowUpRight,
+  Camera,
+  Layers,
+  ShoppingBag,
+  Maximize2,
+  Trash2,
+  Gauge,
+  Code2
+} from 'lucide-react';
+
+const AuditAnimation = () => {
+  return (
+    <div className="w-full h-full bg-slate-50 p-6 flex flex-col justify-center relative overflow-hidden font-mono">
+      {/* Light Tech Background Effects */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-[10%] -right-[10%] w-[60%] h-[60%] rounded-full bg-emerald-100/50 blur-[100px]"
+        />
+        <motion.div
+          animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute -bottom-[10%] -left-[10%] w-[70%] h-[70%] rounded-full bg-cyan-100/50 blur-[100px]"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#cbd5e1_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e1_1px,transparent_1px)] bg-[size:24px_24px] opacity-40"></div>
+      </div>
+
+      <div className="flex w-full gap-4 relative z-10 items-stretch h-[240px]">
+        {/* Card 1: Remove Unused JS */}
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, type: "spring" }}
+          className="flex-1 bg-white/80 backdrop-blur-xl border border-white/60 shadow-[0_8px_30px_-10px_rgba(0,0,0,0.05)] rounded-2xl p-5 flex flex-col justify-between group relative overflow-hidden"
+        >
+          {/* Header */}
+          <div className="flex flex-col gap-3 z-10">
+            <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center shrink-0 border border-red-100">
+              <Code2 className="w-5 h-5 text-red-500" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2 mb-1.5">
+                <span className="text-[10px] font-bold bg-red-100 text-red-600 px-2 py-0.5 rounded-full tracking-wide">CRITICAL</span>
+              </div>
+              <div className="text-slate-800 font-bold text-sm leading-tight">Remove Unused JS</div>
+            </div>
+          </div>
+          
+          {/* Animation */}
+          <motion.div 
+            className="flex flex-col gap-1.5 z-10 mt-auto bg-slate-50/80 rounded-lg p-3 border border-slate-100"
+            initial="idle"
+            whileHover="cleaning"
+          >
+            <motion.div 
+              variants={{ cleaning: { opacity: 0, x: 20 } }}
+              transition={{ duration: 0.3 }}
+              className="text-[11px] text-slate-500 line-through decoration-red-400 decoration-2 flex items-center gap-2"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-red-400"></span>
+              jquery.min.js
+            </motion.div>
+             <motion.div 
+              variants={{ cleaning: { opacity: 0, x: 20 } }}
+              transition={{ duration: 0.3, delay: 0.1 }}
+              className="text-[11px] text-slate-500 line-through decoration-red-400 decoration-2 flex items-center gap-2"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-red-400"></span>
+              tracker_v1.js
+            </motion.div>
+            <div className="flex items-center gap-1.5 text-emerald-600 text-xs font-bold mt-1 pt-1 border-t border-slate-200/50">
+               <Trash2 className="w-3.5 h-3.5" />
+               <span>Saved 125 KiB</span>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        {/* Card 2: Speed Up Page Load */}
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.4, type: "spring" }}
+          className="flex-1 bg-white/80 backdrop-blur-xl border border-white/60 shadow-[0_8px_30px_-10px_rgba(0,0,0,0.05)] rounded-2xl p-5 flex flex-col justify-between group relative overflow-hidden"
+        >
+          {/* Header */}
+          <div className="flex flex-col gap-3 z-10">
+            <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center shrink-0 border border-emerald-100">
+              <Gauge className="w-5 h-5 text-emerald-500" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2 mb-1.5">
+                <span className="text-[10px] font-bold bg-emerald-100 text-emerald-600 px-2 py-0.5 rounded-full tracking-wide">SPEED</span>
+              </div>
+              <div className="text-slate-800 font-bold text-sm leading-tight">Boost Page Load</div>
+            </div>
+          </div>
+
+          {/* Animation */}
+          <div className="flex flex-col gap-2 z-10 mt-auto bg-slate-50/80 rounded-lg p-3 border border-slate-100">
+            <div className="flex items-baseline justify-between">
+              <span className="text-[10px] text-slate-400 font-medium uppercase">Load Time</span>
+              <motion.span 
+                animate={{ color: ["#ef4444", "#f59e0b", "#10b981"] }}
+                transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                className="text-2xl font-bold text-emerald-500"
+              >
+                0.8s
+              </motion.span>
+            </div>
+             <div className="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden">
+               <motion.div 
+                 animate={{ width: ["20%", "60%", "100%"] }}
+                 transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                 className="h-full bg-gradient-to-r from-emerald-400 to-emerald-500 rounded-full"
+               />
+             </div>
+          </div>
+        </motion.div>
+      </div>
+      
+      {/* Floating Code Snippets Background - Light Mode */}
+      <div className="absolute -z-10 text-[10px] text-slate-300 font-mono left-6 bottom-6 opacity-60">
+         <div>&lt;script src="..." defer&gt;</div>
+         <div className="pl-4">const performance = ...</div>
+         <div>&lt;/script&gt;</div>
+      </div>
+    </div>
+  );
+};
+
+const VisualsAnimation = () => {
+  const images = [
+    { src: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=600&auto=format&fit=crop", tag: "Amazon" },
+    { src: "https://images.unsplash.com/photo-1512374382149-233c42b6a83b?q=80&w=600&auto=format&fit=crop", tag: "Instagram" },
+    { src: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=600&auto=format&fit=crop", tag: "TikTok" },
+    { src: "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?q=80&w=600&auto=format&fit=crop", tag: "Shopify" }
+  ];
+
+  return (
+    <div className="w-full h-full bg-slate-50 p-6 flex flex-col justify-center relative overflow-hidden font-sans">
+      {/* Background Effects */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-[10%] -left-[10%] w-[60%] h-[60%] rounded-full bg-purple-200/30 blur-[100px]"
+        />
+        <motion.div
+          animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute -bottom-[10%] -right-[10%] w-[70%] h-[70%] rounded-full bg-indigo-200/30 blur-[100px]"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#cbd5e1_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e1_1px,transparent_1px)] bg-[size:40px_40px] opacity-30"></div>
+      </div>
+
+      {/* Image Grid - Uniform 2x2 Grid */}
+      <div className="grid grid-cols-2 grid-rows-2 gap-3 w-full h-full relative z-10">
+        {images.map((img, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ delay: i * 0.1, type: "spring", stiffness: 200, damping: 20 }}
+            whileHover={{ scale: 1.03, zIndex: 10, transition: { duration: 0.2 } }}
+            className="relative rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow group bg-white w-full h-full"
+          >
+            {/* Image */}
+            <img 
+              src={img.src} 
+              alt={img.tag} 
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+            />
+            
+            {/* Overlay Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+            {/* Floating Tag */}
+            <div className="absolute bottom-3 left-3 px-2.5 py-1 bg-black/70 backdrop-blur-md rounded-lg text-white text-[10px] font-bold tracking-wide shadow-lg border border-white/10">
+              {img.tag}
+            </div>
+
+            {/* Hover Icon */}
+            <div className="absolute top-3 right-3 w-8 h-8 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
+              <Maximize2 className="w-4 h-4 text-white" />
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Floating Elements for Context */}
+      <motion.div
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-8 right-8 z-0 opacity-40 pointer-events-none"
+      >
+        <Camera className="w-24 h-24 text-indigo-200" />
+      </motion.div>
+      <motion.div
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="absolute bottom-8 left-8 z-0 opacity-40 pointer-events-none"
+      >
+        <Layers className="w-20 h-20 text-purple-200" />
+      </motion.div>
+    </div>
+  );
+};
 
 const VisibilityScoreAnimation = () => {
   const container = {
@@ -594,7 +803,7 @@ const slides = [
   },
   {
     id: 2,
-    title: "Is Anyone Talking About Workfx on Reddit?",
+    title: "Is Anyone Talking About WorkfxAI on Reddit?",
     description: "AI engines trust real human conversations. We build your brand’s presence on Reddit to make you a top-tier recommendation.",
     componentId: 'reddit',
     buttonText: 'STEP3: CONNECT'
@@ -746,6 +955,10 @@ export default function App() {
                         <ContentCalendarAnimation />
                       ) : slides[currentSlide].componentId === 'reddit' ? (
                         <RedditAnimation />
+                      ) : slides[currentSlide].componentId === 'visuals' ? (
+                        <VisualsAnimation />
+                      ) : slides[currentSlide].componentId === 'audit' ? (
+                        <AuditAnimation />
                       ) : slides[currentSlide].componentId === 'traffic' ? (
                         <TrafficAnalyticsAnimation />
                       ) : (
