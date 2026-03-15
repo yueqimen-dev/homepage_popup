@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, ArrowRight, Target, FileText, Link as LinkIcon, Globe, Search, XCircle, AlertTriangle, CheckCircle2, Linkedin, Youtube, Twitter, Instagram, MessageCircle, Video, BarChart2, Settings, HelpCircle } from 'lucide-react';
+import { X, ArrowRight, Target, FileText, Link as LinkIcon, Globe, Search, XCircle, AlertTriangle, CheckCircle2, Linkedin, Youtube, Twitter, Instagram, MessageCircle, Video, BarChart2, Settings, HelpCircle, MessageSquare, Sparkles, Zap, Shield, Handshake, TrendingUp, Share2, DollarSign, ArrowUpRight } from 'lucide-react';
 
 const VisibilityScoreAnimation = () => {
   const container = {
@@ -98,6 +98,159 @@ const VisibilityScoreAnimation = () => {
           </motion.div>
         ))}
       </motion.div>
+    </div>
+  );
+};
+
+const RedditAnimation = () => {
+  return (
+    <div className="w-full h-full bg-[#FFFBF5] p-6 flex flex-col justify-center gap-6 relative overflow-hidden font-sans">
+      {/* Premium Gold/Beige Background Effects */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Soft Golden Glow Top Right */}
+        <motion.div
+          animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-[30%] -right-[20%] w-[80%] h-[80%] rounded-full bg-amber-200/20 blur-[120px]"
+        />
+        {/* Soft Warm Glow Bottom Left */}
+        <motion.div
+          animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute -bottom-[20%] -left-[10%] w-[70%] h-[70%] rounded-full bg-orange-100/30 blur-[100px]"
+        />
+        {/* Subtle Texture/Grain */}
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-[0.03]"></div>
+      </div>
+
+      <div className="flex w-full h-full gap-5 items-center justify-center relative z-10 px-2">
+        {/* Card 1: Reply Leads (Karma/Trust Theme) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+          whileHover={{ y: -5, boxShadow: "0 20px 40px -10px rgba(251, 191, 36, 0.15)" }}
+          className="flex-1 h-[280px] bg-gradient-to-br from-white/90 to-amber-50/50 backdrop-blur-xl rounded-[24px] border border-white/60 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.03)] p-6 flex flex-col justify-between group overflow-hidden relative"
+        >
+          {/* Header */}
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-10 h-10 rounded-2xl bg-amber-100 flex items-center justify-center text-amber-600 shadow-inner">
+              <MessageSquare className="w-5 h-5" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-slate-800 leading-none">Reply Leads</h3>
+              <span className="text-[10px] font-medium text-amber-600/80 uppercase tracking-wider">Build Trust</span>
+            </div>
+          </div>
+
+          {/* Visual: Karma & Handshake */}
+          <div className="flex-1 flex flex-col items-center justify-center relative">
+            {/* Karma Card */}
+            <motion.div 
+              className="absolute top-2 left-0 bg-white/80 rounded-xl p-3 shadow-sm border border-amber-100 w-[110px]"
+              animate={{ y: [0, -4, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <div className="flex items-center gap-1.5 text-amber-500 font-bold text-lg">
+                <ArrowUpRight className="w-5 h-5" />
+                <motion.span
+                  animate={{ opacity: [0.8, 1, 0.8] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >326</motion.span>
+              </div>
+              <div className="text-[10px] text-slate-400 font-medium mt-0.5">Karma</div>
+            </motion.div>
+
+            {/* Handshake/Trust Icon */}
+            <motion.div 
+              className="absolute bottom-2 right-0 w-20 h-20 text-amber-200/60"
+              animate={{ scale: [1, 1.05, 1], rotate: [0, 2, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <Handshake className="w-full h-full fill-current" />
+            </motion.div>
+
+             {/* Shield Icon (Background) */}
+             <div className="absolute top-8 right-2 w-12 h-12 text-amber-100/40">
+                <Shield className="w-full h-full fill-current" />
+             </div>
+          </div>
+
+          {/* Action Button */}
+          <button className="w-full py-2.5 bg-slate-900 text-white text-xs font-bold rounded-xl shadow-lg shadow-slate-900/10 flex items-center justify-center gap-2 group-hover:bg-amber-600 transition-colors">
+            <Zap className="w-3.5 h-3.5 fill-white" />
+            Auto-Reply
+          </button>
+        </motion.div>
+
+        {/* Card 2: Post Ideas (Growth/Chart Theme) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, type: "spring", stiffness: 200 }}
+          whileHover={{ y: -5, boxShadow: "0 20px 40px -10px rgba(59, 130, 246, 0.15)" }}
+          className="flex-1 h-[280px] bg-gradient-to-br from-white/90 to-blue-50/50 backdrop-blur-xl rounded-[24px] border border-white/60 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.03)] p-6 flex flex-col justify-between group overflow-hidden relative"
+        >
+          {/* Header */}
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-10 h-10 rounded-2xl bg-blue-100 flex items-center justify-center text-blue-600 shadow-inner">
+              <Sparkles className="w-5 h-5" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-slate-800 leading-none">Post Ideas</h3>
+              <span className="text-[10px] font-medium text-blue-600/80 uppercase tracking-wider">Go Viral</span>
+            </div>
+          </div>
+
+          {/* Visual: Post & Chart */}
+          <div className="flex-1 flex flex-col items-center justify-center relative w-full px-2">
+            {/* Abstract Post Card */}
+            <div className="w-full bg-white/60 rounded-xl p-3 border border-blue-100 shadow-sm relative overflow-hidden">
+               {/* Title Line */}
+               <div className="h-2.5 w-1/3 bg-slate-200 rounded-full mb-3"></div>
+               
+               {/* Chart Bars */}
+               <div className="flex items-end gap-1.5 h-16 w-full mt-2 relative z-10">
+                  {[30, 50, 40, 70, 90].map((h, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ height: 0 }}
+                      animate={{ height: `${h}%` }}
+                      transition={{ duration: 1, delay: 0.6 + (i * 0.1), type: "spring" }}
+                      className="flex-1 bg-gradient-to-t from-amber-400 to-amber-300 rounded-t-sm opacity-90"
+                    />
+                  ))}
+               </div>
+
+               {/* Rising Arrow */}
+               <motion.div 
+                 initial={{ scale: 0, opacity: 0 }}
+                 animate={{ scale: 1, opacity: 1, x: [0, 5], y: [0, -5] }}
+                 transition={{ delay: 1.2, duration: 0.5 }}
+                 className="absolute bottom-8 right-4 text-slate-800"
+               >
+                 <TrendingUp className="w-8 h-8 drop-shadow-sm" />
+               </motion.div>
+
+               {/* Dollar Coin Icon */}
+               <motion.div
+                 initial={{ scale: 0, rotate: -180 }}
+                 animate={{ scale: 1, rotate: 0 }}
+                 transition={{ delay: 1.4, type: "spring" }}
+                 className="absolute -bottom-2 -right-2 w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center text-white border-2 border-white shadow-md z-20"
+               >
+                 <DollarSign className="w-5 h-5 font-bold" />
+               </motion.div>
+            </div>
+          </div>
+
+          {/* Action Button */}
+          <button className="w-full py-2.5 bg-slate-900 text-white text-xs font-bold rounded-xl shadow-lg shadow-slate-900/10 flex items-center justify-center gap-2 group-hover:bg-blue-600 transition-colors">
+            <Sparkles className="w-3.5 h-3.5 fill-white" />
+            Generate
+          </button>
+        </motion.div>
+      </div>
     </div>
   );
 };
@@ -441,11 +594,32 @@ const slides = [
   },
   {
     id: 2,
+    title: "Is Anyone Talking About Workfx on Reddit?",
+    description: "AI engines trust real human conversations. We build your brand’s presence on Reddit to make you a top-tier recommendation.",
+    componentId: 'reddit',
+    buttonText: 'STEP3: CONNECT'
+  },
+  {
+    id: 3,
+    title: "Do Your Visuals Grab AI’s Attention?",
+    description: "Boring photos kill conversions. Generate high-end, AI-optimized product visuals that stand out and sell.",
+    componentId: 'visuals',
+    buttonText: 'STEP4: VISUALIZE'
+  },
+  {
+    id: 4,
+    title: "Can AI Actually \"Read\" Your Website?",
+    description: "Bad code makes you invisible. We audit your site’s technical health to ensure AI engines can crawl and cite you perfectly.",
+    componentId: 'audit',
+    buttonText: 'STEP5: AUDIT'
+  },
+  {
+    id: 5,
     title: "How to Track Your WorkfxAI Performance?",
     description: "Monitor traffic & AI visibility changes in real time. Smarter marketing starts here.",
     badge: "Coming Soon",
     componentId: 'traffic',
-    buttonText: 'STEP3: TRACKING'
+    buttonText: 'STEP6: TRACKING'
   }
 ];
 
@@ -454,6 +628,7 @@ export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   const nextSlide = useCallback(() => {
     setDirection(1);
@@ -461,10 +636,10 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    if (!isOpen || isHovered) return;
+    if (!isOpen || isHovered || isPaused) return;
     const timer = setInterval(nextSlide, 5000);
     return () => clearInterval(timer);
-  }, [isOpen, isHovered, nextSlide]);
+  }, [isOpen, isHovered, isPaused, nextSlide]);
 
   const variants = {
     enter: (direction: number) => ({
@@ -491,6 +666,40 @@ export default function App() {
           Show Announcement
         </button>
       )}
+
+      {/* Debug Controls */}
+      <div className="fixed top-4 left-4 z-50 flex flex-col gap-2">
+        <div className="flex gap-2">
+          <button 
+            onClick={() => setIsOpen(!isOpen)}
+            className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium text-sm transition-colors shadow-md"
+          >
+            Toggle Modal
+          </button>
+        </div>
+        
+        {isOpen && (
+          <div className="flex gap-2 bg-white/90 backdrop-blur-sm p-2 rounded-lg shadow-md border border-slate-200">
+            {slides.map((slide, index) => (
+              <button
+                key={slide.id}
+                onClick={() => {
+                  setDirection(index > currentSlide ? 1 : -1);
+                  setCurrentSlide(index);
+                  setIsPaused(true);
+                }}
+                className={`px-3 py-1.5 rounded-md text-xs font-bold transition-all ${
+                  currentSlide === index 
+                    ? 'bg-neutral-900 text-white shadow-sm' 
+                    : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
+                }`}
+              >
+                Slide {index + 1}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
 
       <AnimatePresence>
         {isOpen && (
@@ -535,8 +744,17 @@ export default function App() {
                         <VisibilityScoreAnimation />
                       ) : slides[currentSlide].componentId === 'calendar' ? (
                         <ContentCalendarAnimation />
-                      ) : (
+                      ) : slides[currentSlide].componentId === 'reddit' ? (
+                        <RedditAnimation />
+                      ) : slides[currentSlide].componentId === 'traffic' ? (
                         <TrafficAnalyticsAnimation />
+                      ) : (
+                        // Placeholder for new slides - using a simple gradient or image for now
+                        <div className="w-full h-full bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
+                          <span className="text-slate-400 font-bold text-xl tracking-widest uppercase opacity-20">
+                            {slides[currentSlide].componentId}
+                          </span>
+                        </div>
                       )}
                     </motion.div>
                   </AnimatePresence>
@@ -601,6 +819,7 @@ export default function App() {
 
                   {/* Bottom Button - Full width, centered, static text */}
                   <button 
+                    onClick={nextSlide}
                     className="w-full py-3.5 bg-neutral-900 hover:bg-black text-white rounded-xl font-medium text-[16px] transition-all active:scale-[0.98] flex items-center justify-center gap-2 shadow-md group uppercase"
                   >
                     {slides[currentSlide].buttonText}
